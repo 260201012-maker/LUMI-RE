@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f8e7df" />
+  <title>LUMIÉRE — Beauty, Health & Personal Care</title>
+  <meta name="description" content="LUMIÉRE ร้านเครื่องสำอางและของใช้ส่วนบุคคลแบบ B2C พร้อม Color Swatches และรีวิวจากผู้ใช้จริง" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="announcement">ส่งฟรีเมื่อซื้อครบ ฿1,500 · รับตัวอย่างฟรี 2 ชิ้นทุกออเดอร์ · คืนสินค้าได้ภายใน 7 วัน</div>
+
+  <header class="site-header" id="top">
+    <div class="header-inner container">
+      <button class="icon-btn mobile-menu" aria-label="เปิดเมนู" id="mobileMenuBtn">☰</button>
+      <a class="brand" href="#top" aria-label="LUMIÉRE หน้าหลัก">LUMIÉRE</a>
+      <nav class="desktop-nav" id="mainNav" aria-label="เมนูหลัก">
+        <a href="#shop">SHOP</a>
+        <a href="#lip-matte">LIP MATTE</a>
+        <a href="#blush">BLUSH</a>
+        <a href="#concealer">CONCEALER</a>
+        <a href="#reviews">REVIEWS</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="ค้นหา">⌕</button>
+        <button class="icon-btn" id="wishlistBtn" aria-label="รายการโปรด">♡<span class="count-badge" id="wishCount">0</span></button>
+        <button class="icon-btn" id="cartBtn" aria-label="ตะกร้าสินค้า">🛍<span class="count-badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+    <div class="search-panel" id="searchPanel" aria-hidden="true">
+      <div class="container search-wrap">
+        <input id="searchInput" type="search" placeholder="ค้นหาลิป บลัช คอนซีลเลอร์ หรือเฉดสี..." autocomplete="off" />
+        <button class="pill-btn" id="searchClose">ปิด</button>
+      </div>
+      <div class="container search-results" id="searchResults"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">NEW SEASON · 2026</span>
+          <h1 id="heroTitle">สีที่เป็นคุณ<br><em>ในทุกเวอร์ชัน</em></h1>
+          <p>เมคอัพเนื้อสัมผัสสวย สีจริงเลือกง่าย และไอเท็มที่ใช้ได้ทุกวัน — curated สำหรับผิวเอเชียโดยเฉพาะ</p>
+          <div class="hero-cta">
+            <a class="primary-btn" href="#shop">ช้อป Bestsellers <span>→</span></a>
+            <button class="text-btn" id="shadeFinderBtn">ค้นหาเฉดที่ใช่ <span>✦</span></button>
+          </div>
+          <div class="trust-row" aria-label="จุดเด่น">
+            <span>✓ สีจริงเทียบแสงธรรมชาติ</span>
+            <span>✓ Vegan-friendly</span>
+            <span>✓ ผ่านการทดสอบกับผิวเอเชีย</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="ตัวอย่างสินค้าและสีสัน">
+          <div class="blob blob-a"></div><div class="blob blob-b"></div><div class="blob blob-c"></div>
+          <div class="hero-card hero-card-back">YOUR SHADE<br><strong>YOUR MOOD</strong></div>
+          <div class="hero-lip">
+            <div class="lip-cap"></div><div class="lip-body"></div><div class="lip-head"></div>
+          </div>
+          <div class="hero-compact">
+            <div class="compact-lid">L</div><div class="compact-pan"></div>
+          </div>
+          <div class="floating-chip chip-one">05 · ROSÉ</div>
+          <div class="floating-chip chip-two">NEW / HYDRATING</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-strip" id="shop">
+      <div class="container category-inner">
+        <button class="category-chip active" data-filter="all">ทั้งหมด</button>
+        <button class="category-chip" data-filter="lip">ลิปแมตต์</button>
+        <button class="category-chip" data-filter="blush">บลัชออน</button>
+        <button class="category-chip" data-filter="concealer">คอนซีลเลอร์</button>
+      </div>
+    </section>
+
+    <section class="section container" id="bestsellers">
+      <div class="section-head">
+        <div><span class="eyebrow">BESTSELLERS</span><h2>สามไอเท็มที่คนหยิบซ้ำ</h2></div>
+        <button class="underlined-btn" id="viewAllBtn">ดูทั้งหมด →</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="shade-story">
+      <div class="container shade-grid">
+        <div class="shade-copy">
+          <span class="eyebrow">COLOR SWATCHES</span>
+          <h2>เลือกสีจาก “สีจริง”<br>ไม่ต้องเดาอีกต่อไป</h2>
+          <p>คลิกวงกลมสีเพื่อดูชื่อเฉดและภาพสินค้าที่เปลี่ยนตามสีแบบเรียลไทม์ พร้อมโทนสีที่จัดกลุ่มให้เทียบง่าย</p>
+          <div class="legend"><span><i class="dot warm"></i> Warm</span><span><i class="dot neutral"></i> Neutral</span><span><i class="dot cool"></i> Cool</span></div>
+        </div>
+        <div class="featured-shade" id="featuredShade">
+          <div class="featured-visual" id="featuredVisual"></div>
+          <div class="featured-info"><span class="eyebrow">NOW PICKED</span><h3 id="featuredName">05 Rosé Muse</h3><p id="featuredDesc">ชมพูโรสกุหลาบนุ่ม ๆ สำหรับ everyday look</p><div class="shade-price" id="featuredPrice">฿690</div></div>
+          <button class="primary-btn full" id="featuredAdd">เพิ่มลงตะกร้า</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="lip-matte">
+      <div class="section-head compact"><div><span class="eyebrow">01 · LIP MATTE</span><h2>แมตต์แต่ไม่แห้ง</h2></div><span class="section-note">8 เฉดขายดี</span></div>
+      <div class="horizontal-products" id="lipProducts"></div>
+    </section>
+
+    <section class="split-feature" id="blush">
+      <div class="container split-grid">
+        <div class="split-copy">
+          <span class="eyebrow">02 · BLUSH</span><h2>แก้มระเรื่อแบบ “ผิวดี”</h2><p>เนื้อบลัชเบลนด์ง่าย เกลี่ยด้วยนิ้วก็สวย สีโปร่งแต่ build ได้ และติดทนตลอดวัน</p>
+          <button class="secondary-btn" data-jump-filter="blush">ดูบลัชทั้งหมด <span>→</span></button>
+        </div>
+        <div class="blush-stage"><div class="blush-circle"></div><div class="blush-compact-large"><div class="compact-rim"></div><div class="compact-pan blush-pan"></div></div><div class="shade-label">03 · PEACH VEIL</div></div>
+      </div>
+    </section>
+
+    <section class="section container" id="concealer">
+      <div class="section-head compact"><div><span class="eyebrow">03 · CONCEALER</span><h2>ปกปิด แต่ยังดูเป็นผิว</h2></div><span class="section-note">6 undertones</span></div>
+      <div class="concealer-feature">
+        <div class="concealer-visual"><div class="concealer-tube"><div class="tube-cap"></div><div class="tube-body">LUMIÉRE<br><small>SOFT FOCUS</small></div></div><div class="skin-gradient"></div></div>
+        <div class="concealer-copy"><div class="rating-line">★★★★★ <span>4.9 · 312 รีวิว</span></div><h3>Soft Focus Skin Concealer</h3><p>คอนซีลเลอร์เนื้อยืดหยุ่น ปรับรอยคล้ำและจุดที่ต้องการโดยไม่ทำให้ดูหนา พร้อมสีแบ่งตาม undertone</p><div class="swatches" id="concealerSwatches"></div><div class="price-row"><strong id="concealerPrice">฿790</strong><button class="primary-btn" id="concealerAdd">เพิ่มลงตะกร้า</button></div></div>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="reviews-head"><div><span class="eyebrow">REAL REVIEWS</span><h2>เสียงจากคนใช้จริง</h2><p>รีวิวพร้อมภาพจากลูกค้าที่อนุญาตให้เราแชร์ประสบการณ์</p></div><button class="secondary-btn" id="writeReviewBtn">เขียนรีวิว</button></div>
+        <div class="review-grid" id="reviewGrid"></div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner"><div><span class="eyebrow">LUMIÉRE CLUB</span><h2>สมัครรับสิทธิ์ก่อนใคร</h2><p>รับโค้ดส่วนลดเปิดตัวสินค้าใหม่, วิธีเลือกเฉด และเซ็ตทดลองแบบลับเฉพาะสมาชิก</p></div><form id="newsletterForm" class="newsletter-form"><input id="emailInput" type="email" placeholder="อีเมลของคุณ" required><button class="primary-btn" type="submit">สมัครเลย</button></form></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand" href="#top">LUMIÉRE</a><p>Beauty, Health & Personal Care<br>made for everyday confidence.</p></div><div><strong>SHOP</strong><a href="#lip-matte">Lip Matte</a><a href="#blush">Blush</a><a href="#concealer">Concealer</a></div><div><strong>HELP</strong><a href="#reviews">Reviews</a><a href="#top" id="shippingLink">Shipping & Returns</a><a href="#top" id="contactLink">Contact</a></div><div><strong>SOCIAL</strong><a href="#top" class="socialLink">Instagram</a><a href="#top" class="socialLink">TikTok</a><a href="#top" class="socialLink">LINE OA</a></div></div><div class="container footer-bottom">© 2026 LUMIÉRE. Demo storefront · Prices include VAT.</div></footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true"><div class="drawer-head"><h2>ตะกร้าของคุณ</h2><button class="icon-btn" id="cartClose">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot"><div class="cart-total"><span>ยอดรวม</span><strong id="cartTotal">฿0</strong></div><button class="primary-btn full" id="checkoutBtn">ไปชำระเงิน</button><p class="small-muted">Demo checkout — ปุ่มทำงานในหน้าเว็บจำลองนี้</p></div></aside>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-hidden="true"><button class="modal-close" data-close-modal>×</button><div id="productModalContent"></div></div>
+  <div class="modal wide" id="reviewModal" role="dialog" aria-modal="true" aria-hidden="true"><button class="modal-close" data-close-modal>×</button><div id="reviewModalContent"></div></div>
+  <div class="modal" id="shadeModal" role="dialog" aria-modal="true" aria-hidden="true"><button class="modal-close" data-close-modal>×</button><div class="shade-finder"><span class="eyebrow">SHADE FINDER</span><h2>เลือกเฉดจาก undertone</h2><p>บอกโทนผิวที่ใกล้ที่สุด แล้วเราจะแนะนำสีให้แบบเดโม</p><div class="finder-options"><button data-undertone="warm">Warm / ผิวโทนอุ่น</button><button data-undertone="neutral">Neutral / ผิวโทนกลาง</button><button data-undertone="cool">Cool / ผิวโทนเย็น</button></div><div class="finder-result" id="finderResult">เลือก undertone เพื่อดูเฉดแนะนำ</div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
